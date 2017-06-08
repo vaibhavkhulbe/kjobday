@@ -25,7 +25,8 @@
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 11,
-          center: {lat: 41.876, lng: -87.624}
+          center: {lat: 41.876, lng: -87.624},
+          mapTypeId: google.maps.MapTypeId.HYBRID
         });
 
         var ctaLayer = new google.maps.KmlLayer({
