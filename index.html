@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Happy Birthday Kanchu</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>
+      <center>
+    Happy Birthday Kanchu. <br> Zoom and click on any of the red marks
+      </center>
+    </h1>
+    <div id="map"></div>
+    <script>
+
+      
+
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 5,
+          center: {lat: 27.937446,lng:78.8357808},
+          mapTypeId: google.maps.MapTypeId.HYBRID
+        });
+
+
+      var haldwani = {lat:29.2183 ,lng:79.5130};
+      var kjo_home = { lat:29.195757, lng:79.525169};
+      var pithoragarh = {lat:29.5905559,lng:80.1958817};
+      var thal = {lat:29.8263983,lng:80.1390168};
+      var dehradun = {lat:30.320956, lng:78.052400};
+      var kichha = {lat:28.907057, lng:79.517328};
+      var jhansi = {lat:25.4412563,lng:78.4922478};
+
+      var shaldwani = "Happy birthday Kanchan from all your friends. We love you a lot. You have always been an unseparable part of our lives. Please don't forget us ever.";
+      var skjo_home = "Happy Birthday Kanchan. This place is never complete without you. Though we fight a lot but deep inside we love you too much.";
+      var spithoragarh = "Happy Birthday Kanchan. Your maternal home misses you a lot. Your presence lighten up the happiness in this place. Come soon";
+      var sthal = "Happy Birthday Kanchan. Your paternal home misses you a lot. Those beautiful few years you spent here are quite memorable for us. Vsit us soon.";
+      var sdehradun = "Happy Birthday Baby. I wish you have the best birthday till date because the coming ones will be even better. I love you. This is the only gift i can plan for you as of right now. Best of luck for your life.";
+      var skichha = "Happy Birthday daughter-in-law. We wish you to some to us soon and make this family complete. Love you dear.";
+      var sjhansi = "Happy Birthday Kanchan. Gullu is missing you a lot and she wishes you a special birthday. We all love you and hope of your best in your life.";
+      
+
+      function createcontent(place, desc){
+            return '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">'+place+'</h1>'+
+            '<div id="bodyContent">'+
+            '<p>'+desc+'</p>'+
+            '</div>'+
+            '</div>';
+      }
+
+      var marker=[];
+
+      marker[1]= new google.maps.Marker({
+        position: haldwani,
+        map: map,
+      });
+
+      marker[2]= new google.maps.Marker({
+        position: kjo_home,
+        map: map,
+      });
+
+      marker[3]= new google.maps.Marker({
+        position: pithoragarh,
+        map: map,
+      });
+
+      marker[4]= new google.maps.Marker({
+        position: thal,
+        map: map,
+      });
+
+      marker[5]= new google.maps.Marker({
+        position: dehradun,
+        map: map,
+      });
+
+      marker[6]= new google.maps.Marker({
+        position: kichha,
+        map: map,
+      });
+
+      marker[7]= new google.maps.Marker({
+        position: jhansi,
+        map: map,
+      });
+
+      marker[1].addListener('click', function() {
+          var infowindow = new google.maps.InfoWindow({
+            content: createcontent("haldwani",shaldwani),
+          });
+          infowindow.open(map, marker[1]);
+        });
+
+      marker[2].addListener('click', function() {
+          var infowindow = new google.maps.InfoWindow({
+            content: createcontent("kjo_home",skjo_home),
+          });
+          infowindow.open(map, marker[2]);
+        });
+
+      marker[3].addListener('click', function() {
+          var infowindow = new google.maps.InfoWindow({
+            content: createcontent("pithoragarh",spithoragarh),
+          });
+          infowindow.open(map, marker[3]);
+        });
+
+      marker[4].addListener('click', function() {
+          var infowindow = new google.maps.InfoWindow({
+            content: createcontent("thal",sthal),
+          });
+          infowindow.open(map, marker[4]);
+        }); 
+
+      marker[5].addListener('click', function() {
+          var infowindow = new google.maps.InfoWindow({
+            content: createcontent("dehradun",sdehradun),
+          });
+          infowindow.open(map, marker[5]);
+        });
+
+      marker[6].addListener('click', function() {
+          var infowindow = new google.maps.InfoWindow({
+            content: createcontent("kichha",skichha),
+          });
+          infowindow.open(map, marker[6]);
+        });
+      
+      marker[7].addListener('click', function() {
+          var infowindow = new google.maps.InfoWindow({
+            content: createcontent("jhansi",sjhansi),
+          });
+          infowindow.open(map, marker[7]);
+        });
+
+        
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4xKF60tgNOOUOO-G9dwsIUMoyFhXPgCo&callback=initMap">
+    </script>
+  </body>
+</html>
